@@ -5,6 +5,7 @@
 
 
 
+
 /*********************************
  * OUR CODE BELOW; DO NOT TOUCH! *
  *********************************/
@@ -42,8 +43,8 @@ if (typeof addToMultiDigitNumbers === 'undefined') {
   addToMultiDigitNumbers = undefined;
 }
 
-if (typeof hyphenatedNames === 'undefined') {
-  hyphenatedNames = undefined;
+if (typeof hyphenateNames === 'undefined') {
+  hyphenateNames = undefined;
 }
 
 
