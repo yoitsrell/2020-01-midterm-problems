@@ -1,11 +1,74 @@
 /******************
  * YOUR CODE HERE *
  ******************/
+function fizzBuzzSingleNumber(num){
+
+if((num % 3 === 0) && (num % 5 === 0))
+{
+  return ("FizzBuzz")
+}else if((num % 5 === 0) && (num % 3 !== 0)) 
+{
+  return('Buzz')
+}else if((num % 3 !== 0) && (num % 5 === 0))
+{
+  return('Fizz')
+}else{
+  return(num)
+}
+}
 
 
+function getMiddleLetters(str){
+let even = ''
+let odd = ''
+
+  if(str.length % 2 === 0){ 
+    return even
+} else if(str.length % 2 === 1){
+  return odd
+}
+return getMiddleLetters
+}
 
 
+function getNextLetter(str){
+  let alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'   
 
+  for (const item of str){
+    alpha += item 
+  }
+  return 
+}
+
+function getAverage(array){
+let result = 0 
+  
+for (const item of array){
+  result += item 
+}
+  return result/ array.length
+}
+
+function triStateAreaOnly(){
+}
+
+function removeTrolls(){
+
+}
+
+function cipher(str){
+  result = ""
+
+}
+
+
+function addToMultiDigitNumbers(){
+
+}
+
+function hyphenateNames(){
+
+}
 /*********************************
  * OUR CODE BELOW; DO NOT TOUCH! *
  *********************************/
