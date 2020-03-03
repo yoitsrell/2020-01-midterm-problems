@@ -66,6 +66,90 @@ describe('getNextLetter', () => {
   })
 })
 
+describe('getAverage', () => {
+  it(`gets the mean average of the given array of numbers`, () => {
+    const numbers1 = [
+      3,
+      5,
+      10,
+    ]
+
+    const numbers2 = [
+      25,
+      85,
+      40,
+      50,
+    ]
+
+    expect(getAverage(numbers1)).toBe(6);
+    expect(getAverage(numbers2)).toBe(50);
+  })
+})
+
+describe('triStateAreaOnly', () => {
+  it(`given an array of strings, returns an array of only those strings that end in "NY" or "NJ" or "CT"`, () => {
+    const cities1 = [
+      'Brooklyn, NY',
+      'Stamford, CT',
+      'Boston, MA',
+      'Buffalo, NY',
+      'Los Angeles, CA',
+    ];
+
+    const triState1 = [
+      'Brooklyn, NY',
+      'Stamford, CT',
+      'Buffalo, NY',
+    ];
+
+    const cities2 = [
+      'Reno, NV',
+      'Cranford, NJ',
+      'Dover, VT',
+    ];
+
+    const triState2 = [
+      'Cranford, NJ',
+    ];
+
+    expect(triStateAreaOnly(cities1)).toEqual(triState1);
+    expect(triStateAreaOnly(cities2)).toEqual(triState2);
+  })
+})
+
+describe('removeTrolls', () => {
+  it(`given an array of strings representing user posts, it returns an array of those posts that have at least one lower case letter`, () => {
+    const posts1 = [
+      'I AM ANGRY ABOUT POLITICS!!',
+      `I'm kind of annoyed.`,
+      `You know what sucks?
+      EVERYTHING.`,
+      `wat`,
+      `RAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGE`,
+    ];
+
+    const acceptablePosts1 = [
+      `I'm kind of annoyed.`,
+      `You know what sucks?
+      EVERYTHING.`,
+      `wat`,
+    ];
+
+    const posts2 = [
+      'a/s/l',
+      `FIRST`,
+      `BY THOR'S HAMMER!!`,
+    ];
+
+    const acceptablePosts2 = [
+      'a/s/l',
+    ];
+
+    expect(removeTrolls(posts1)).toEqual(acceptablePosts1);
+    expect(removeTrolls(posts2)).toEqual(acceptablePosts2);
+  })
+})
+
 describe('cipher', () => {
   it(`returns a string based on the given string where every letter has been replaced by the following letter in the alphabet`, () => {
     expect(cipher('hello')).toBe('ifmmp');
@@ -201,90 +285,6 @@ describe('addToMultiDigitNumbers', () => {
     expect(addToMultiDigitNumbers(-6, numbers2)).toEqual(result2);
   })
 });
-
-describe('getAverage', () => {
-  it(`gets the average of the given array of numbers`, () => {
-    const numbers1 = [
-      3,
-      5,
-      10,
-    ]
-
-    const numbers2 = [
-      25,
-      85,
-      40,
-      50,
-    ]
-
-    expect(getAverage(numbers1)).toBe(6);
-    expect(getAverage(numbers2)).toBe(50);
-  })
-})
-
-describe('triStateAreaOnly', () => {
-  it(`given an array of strings, returns an array of only those strings that end in "NY" or "NJ" or "CT"`, () => {
-    const cities1 = [
-      'Brooklyn, NY',
-      'Stamford, CT',
-      'Boston, MA',
-      'Buffalo, NY',
-      'Los Angeles, CA',
-    ];
-
-    const triState1 = [
-      'Brooklyn, NY',
-      'Stamford, CT',
-      'Buffalo, NY',
-    ];
-
-    const cities2 = [
-      'Reno, NV',
-      'Cranford, NJ',
-      'Dover, VT',
-    ];
-
-    const triState2 = [
-      'Cranford, NJ',
-    ];
-
-    expect(triStateAreaOnly(cities1)).toEqual(triState1);
-    expect(triStateAreaOnly(cities2)).toEqual(triState2);
-  })
-})
-
-describe('removeTrolls', () => {
-  it(`given an array of strings representing user posts, it returns an array of those posts that have at least one lower case letter`, () => {
-    const posts1 = [
-      'I AM ANGRY ABOUT POLITICS!!',
-      `I'm kind of annoyed.`,
-      `You know what sucks?
-      EVERYTHING.`,
-      `wat`,
-      `RAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGE`,
-    ];
-
-    const acceptablePosts1 = [
-      `I'm kind of annoyed.`,
-      `You know what sucks?
-      EVERYTHING.`,
-      `wat`,
-    ];
-
-    const posts2 = [
-      'a/s/l',
-      `FIRST`,
-      `BY THOR'S HAMMER!!`,
-    ];
-
-    const acceptablePosts2 = [
-      'a/s/l',
-    ];
-
-    expect(removeTrolls(posts1)).toEqual(acceptablePosts1);
-    expect(removeTrolls(posts2)).toEqual(acceptablePosts2);
-  })
-})
 
 describe('hyphenateNames', () => {
   it(`hyphenates the last two names in each string in the given array`, () => {
